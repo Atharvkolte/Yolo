@@ -16,6 +16,7 @@ from ultralytics import YOLO
 import winsound
 import time
 from datetime import datetime
+import os
 
 def alertSound():
     winsound.Beep(1000, 500)  # 1000 Hz for 500 ms
@@ -23,6 +24,8 @@ def alertSound():
 
 def alertTriggered(img):
     timestamp=datetime.now().strftime("%Y%m%d_%H%M%S_%f")
+    if not os.path.exists("CheckingDetection"):
+        os.makedirs("CheckingDetection")
     filename=f"CheckingDetection/detected_{timestamp}.jpg"
     cv2.imwrite(filename,img)
 
