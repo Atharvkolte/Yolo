@@ -121,13 +121,13 @@ class YoloClassification:
 
 def main():
     ###################################
-    path="C:\\DS\\Atharva\\CV\\learning process\\YOLO\\IMAGES\\5)img.png"
+    path="C:\\DS\\Atharva\\CV\\learning process\\YOLO\\IMAGES\\image.png"
     model="yolov8n.pt"
     detector=YoloClassification(path,model)
     ###################################
     
     detector.canBepredict()
-    #detector.detectAndSave()
+    detector.detectAndSave()
     #detector.realTimeDetection()
     #detector.detectCount()
     #detector.realTimeDetectionCount()
